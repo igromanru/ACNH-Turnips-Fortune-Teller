@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sellPriceLabel = new System.Windows.Forms.Label();
             this.sellPriceTextBox = new System.Windows.Forms.TextBox();
             this.saturdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
@@ -36,6 +37,7 @@
             this.wednesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
             this.tuesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
             this.mondayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.openSaveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sellPriceLabel
@@ -98,11 +100,22 @@
             this.mondayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
             this.mondayBuyPricesControl.TabIndex = 2;
             // 
+            // openSaveButton
+            // 
+            this.openSaveButton.Location = new System.Drawing.Point(223, 8);
+            this.openSaveButton.Name = "openSaveButton";
+            this.openSaveButton.Size = new System.Drawing.Size(138, 23);
+            this.openSaveButton.TabIndex = 8;
+            this.openSaveButton.Text = "Open save game...";
+            this.openSaveButton.UseVisualStyleBackColor = true;
+            this.openSaveButton.Click += new System.EventHandler(this.openSaveButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 301);
+            this.Controls.Add(this.openSaveButton);
             this.Controls.Add(this.saturdayBuyPricesControl);
             this.Controls.Add(this.fridayBuyPricesControl);
             this.Controls.Add(this.thursdayBuyPricesControl);
@@ -111,6 +124,7 @@
             this.Controls.Add(this.mondayBuyPricesControl);
             this.Controls.Add(this.sellPriceTextBox);
             this.Controls.Add(this.sellPriceLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -130,6 +144,7 @@
         private BuyPricesControl thursdayBuyPricesControl;
         private BuyPricesControl fridayBuyPricesControl;
         private BuyPricesControl saturdayBuyPricesControl;
+        private System.Windows.Forms.Button openSaveButton;
     }
 }
 

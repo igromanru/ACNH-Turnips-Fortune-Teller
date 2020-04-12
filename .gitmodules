@@ -1,0 +1,3 @@
+[submodule "MyHorizons"]
+	path = MyHorizons
+	url = git@github.com:igromanru/MyHorizons.git
