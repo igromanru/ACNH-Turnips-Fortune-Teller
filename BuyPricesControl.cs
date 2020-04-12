@@ -8,10 +8,15 @@ namespace ACNH_Turnips_Fortuneteller
         {
             InitializeComponent();
         }
-
         public void SetTitle(string title)
         {
             buyPricesGroupBox.Text = title + buyPricesGroupBox.Text;
+        }
+
+        public void SetPrices(uint morningPrice, uint eveningPrice)
+        {
+            morningBuyPriceTextBox.Text = morningPrice.ToString();
+            eveningBuyPriceTextBox.Text = eveningPrice.ToString();
         }
     }
 }

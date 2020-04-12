@@ -3,6 +3,7 @@ using System.Resources;
 using System.Windows.Forms;
 using ACNH_Turnips_Fortuneteller.Properties;
 using ACNH_Turnips_Fortuneteller.Services;
+using MyHorizons.Data.TurnipsData;
 
 namespace ACNH_Turnips_Fortuneteller
 {
@@ -35,13 +36,20 @@ namespace ACNH_Turnips_Fortuneteller
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName)))
+                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName), out Turnips? turnips) && turnips != null)
                     {
-
+                        var turnipsValue = turnips.Value;
+                        sellPriceTextBox.Text = turnipsValue.BuyPrice.ToString();
+                        mondayBuyPricesControl.SetPrices(turnipsValue.Monday.MorningPrice, turnipsValue.Monday.EveningPrice);
+                        tuesdayBuyPricesControl.SetPrices(turnipsValue.Tuesday.MorningPrice, turnipsValue.Tuesday.EveningPrice);
+                        wednesdayBuyPricesControl.SetPrices(turnipsValue.Wednesday.MorningPrice, turnipsValue.Wednesday.EveningPrice);
+                        thursdayBuyPricesControl.SetPrices(turnipsValue.Thursday.MorningPrice, turnipsValue.Thursday.EveningPrice);
+                        fridayBuyPricesControl.SetPrices(turnipsValue.Friday.MorningPrice, turnipsValue.Friday.EveningPrice);
+                        saturdayBuyPricesControl.SetPrices(turnipsValue.Saturday.MorningPrice, turnipsValue.Saturday.EveningPrice);
                     }
                     else
                     {
-                        MessageBox.Show(Resources.application_name, Resources.couldnt_parse_the_save_file, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.couldnt_parse_the_save_file, Resources.application_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
