@@ -3,7 +3,7 @@ using System.Resources;
 using System.Windows.Forms;
 using ACNH_Turnips_Fortuneteller.Properties;
 using ACNH_Turnips_Fortuneteller.Services;
-using MyHorizons.Data.TurnipsData;
+using MyHorizons.Data.TownData;
 
 namespace ACNH_Turnips_Fortuneteller.UI
 {
@@ -36,16 +36,16 @@ namespace ACNH_Turnips_Fortuneteller.UI
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName), out Turnips? turnips) && turnips != null)
+                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName), out StalkMarket? stalkMarket) && stalkMarket != null)
                     {
-                        var turnipsValue = turnips.Value;
-                        sellPriceTextBox.Text = turnipsValue.BuyPrice.ToString();
-                        mondayBuyPricesControl.SetPrices(turnipsValue.Monday.MorningPrice, turnipsValue.Monday.EveningPrice);
-                        tuesdayBuyPricesControl.SetPrices(turnipsValue.Tuesday.MorningPrice, turnipsValue.Tuesday.EveningPrice);
-                        wednesdayBuyPricesControl.SetPrices(turnipsValue.Wednesday.MorningPrice, turnipsValue.Wednesday.EveningPrice);
-                        thursdayBuyPricesControl.SetPrices(turnipsValue.Thursday.MorningPrice, turnipsValue.Thursday.EveningPrice);
-                        fridayBuyPricesControl.SetPrices(turnipsValue.Friday.MorningPrice, turnipsValue.Friday.EveningPrice);
-                        saturdayBuyPricesControl.SetPrices(turnipsValue.Saturday.MorningPrice, turnipsValue.Saturday.EveningPrice);
+                        var stalkMarketValue = stalkMarket.Value;
+                        sellPriceTextBox.Text = stalkMarketValue.BuyPrice.ToString();
+                        mondayBuyPricesControl.SetPrices(stalkMarketValue.Monday.MorningPrice, stalkMarketValue.Monday.EveningPrice);
+                        tuesdayBuyPricesControl.SetPrices(stalkMarketValue.Tuesday.MorningPrice, stalkMarketValue.Tuesday.EveningPrice);
+                        wednesdayBuyPricesControl.SetPrices(stalkMarketValue.Wednesday.MorningPrice, stalkMarketValue.Wednesday.EveningPrice);
+                        thursdayBuyPricesControl.SetPrices(stalkMarketValue.Thursday.MorningPrice, stalkMarketValue.Thursday.EveningPrice);
+                        fridayBuyPricesControl.SetPrices(stalkMarketValue.Friday.MorningPrice, stalkMarketValue.Friday.EveningPrice);
+                        saturdayBuyPricesControl.SetPrices(stalkMarketValue.Saturday.MorningPrice, stalkMarketValue.Saturday.EveningPrice);
                     }
                     else
                     {

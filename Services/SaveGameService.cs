@@ -1,8 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using MyHorizons.Data.Save;
-using MyHorizons.Data.TurnipsData;
-using NLog;
+using MyHorizons.Data.TownData;
 
 namespace ACNH_Turnips_Fortuneteller.Services
 {
@@ -12,9 +11,9 @@ namespace ACNH_Turnips_Fortuneteller.Services
         private const string MainDat = "main.dat";
         private const string MainHeaderDat = "mainHeader.dat";
 
-        public bool OpenSaveFromFolder(string saveDirectory, out Turnips? turnips)
+        public bool OpenSaveFromFolder(string saveDirectory, out StalkMarket? stalkMarket)
         {
-            turnips = null;
+            stalkMarket = null;
             var result = false;
             var mainDatPath = Path.Combine(saveDirectory, MainDat);
             var mainHeaderDatPath = Path.Combine(saveDirectory, MainHeaderDat);
@@ -29,8 +28,8 @@ namespace ACNH_Turnips_Fortuneteller.Services
             else
             {
                 var mainSaveFile = new MainSaveFile(mainHeaderDatPath, mainDatPath);
-                result = mainSaveFile.Loaded && mainSaveFile.Turnips != null;
-                turnips = mainSaveFile.Turnips;
+                result = mainSaveFile.Loaded && mainSaveFile.Town != null;
+                stalkMarket = mainSaveFile.Town?.StalkMarket;
             }
             return result;
         }
