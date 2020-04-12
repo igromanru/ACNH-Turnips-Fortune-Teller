@@ -5,7 +5,7 @@ using ACNH_Turnips_Fortuneteller.Properties;
 using ACNH_Turnips_Fortuneteller.Services;
 using MyHorizons.Data.TurnipsData;
 
-namespace ACNH_Turnips_Fortuneteller
+namespace ACNH_Turnips_Fortuneteller.UI
 {
     public partial class MainForm : Form
     {

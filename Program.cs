@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ACNH_Turnips_Fortuneteller.UI;
 
 namespace ACNH_Turnips_Fortuneteller
 {

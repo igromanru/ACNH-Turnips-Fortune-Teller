@@ -1,4 +1,4 @@
-﻿namespace ACNH_Turnips_Fortuneteller
+﻿namespace ACNH_Turnips_Fortuneteller.UI
 {
     partial class MainForm
     {
@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sellPriceLabel = new System.Windows.Forms.Label();
             this.sellPriceTextBox = new System.Windows.Forms.TextBox();
-            this.saturdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
-            this.fridayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
-            this.thursdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
-            this.wednesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
-            this.tuesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
-            this.mondayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.saturdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
+            this.fridayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
+            this.thursdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
+            this.wednesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
+            this.tuesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
+            this.mondayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
             this.openSaveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -128,7 +128,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ACNH Turnips Fortuneteller";
+            this.Text = "ACNH Turnips Fortune Teller";
             this.ResumeLayout(false);
             this.PerformLayout();
 

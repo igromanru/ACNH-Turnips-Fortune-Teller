@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ACNH_Turnips_Fortuneteller
+namespace ACNH_Turnips_Fortuneteller.UI
 {
     public partial class BuyPricesControl : UserControl
     {

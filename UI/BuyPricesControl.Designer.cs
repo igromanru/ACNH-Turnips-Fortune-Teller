@@ -1,4 +1,4 @@
-﻿namespace ACNH_Turnips_Fortuneteller
+﻿namespace ACNH_Turnips_Fortuneteller.UI
 {
     partial class BuyPricesControl
     {
