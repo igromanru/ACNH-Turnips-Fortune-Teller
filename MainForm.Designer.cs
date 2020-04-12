@@ -30,6 +30,12 @@
         {
             this.sellPriceLabel = new System.Windows.Forms.Label();
             this.sellPriceTextBox = new System.Windows.Forms.TextBox();
+            this.saturdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.fridayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.thursdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.wednesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.tuesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
+            this.mondayBuyPricesControl = new ACNH_Turnips_Fortuneteller.BuyPricesControl();
             this.SuspendLayout();
             // 
             // sellPriceLabel
@@ -50,33 +56,12 @@
             this.sellPriceTextBox.Size = new System.Drawing.Size(55, 20);
             this.sellPriceTextBox.TabIndex = 1;
             // 
-            // mondayBuyPricesControl
+            // saturdayBuyPricesControl
             // 
-            this.mondayBuyPricesControl.Location = new System.Drawing.Point(12, 36);
-            this.mondayBuyPricesControl.Name = "mondayBuyPricesControl";
-            this.mondayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.mondayBuyPricesControl.TabIndex = 2;
-            // 
-            // tuesdayBuyPricesControl
-            // 
-            this.tuesdayBuyPricesControl.Location = new System.Drawing.Point(12, 121);
-            this.tuesdayBuyPricesControl.Name = "tuesdayBuyPricesControl";
-            this.tuesdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.tuesdayBuyPricesControl.TabIndex = 3;
-            // 
-            // wednesdayBuyPricesControl
-            // 
-            this.wednesdayBuyPricesControl.Location = new System.Drawing.Point(12, 206);
-            this.wednesdayBuyPricesControl.Name = "wednesdayBuyPricesControl";
-            this.wednesdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.wednesdayBuyPricesControl.TabIndex = 4;
-            // 
-            // thursdayBuyPricesControl
-            // 
-            this.thursdayBuyPricesControl.Location = new System.Drawing.Point(223, 36);
-            this.thursdayBuyPricesControl.Name = "thursdayBuyPricesControl";
-            this.thursdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.thursdayBuyPricesControl.TabIndex = 5;
+            this.saturdayBuyPricesControl.Location = new System.Drawing.Point(223, 206);
+            this.saturdayBuyPricesControl.Name = "saturdayBuyPricesControl";
+            this.saturdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
+            this.saturdayBuyPricesControl.TabIndex = 7;
             // 
             // fridayBuyPricesControl
             // 
@@ -85,12 +70,33 @@
             this.fridayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
             this.fridayBuyPricesControl.TabIndex = 6;
             // 
-            // saturdayBuyPricesControl
+            // thursdayBuyPricesControl
             // 
-            this.saturdayBuyPricesControl.Location = new System.Drawing.Point(223, 206);
-            this.saturdayBuyPricesControl.Name = "saturdayBuyPricesControl";
-            this.saturdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.saturdayBuyPricesControl.TabIndex = 7;
+            this.thursdayBuyPricesControl.Location = new System.Drawing.Point(223, 36);
+            this.thursdayBuyPricesControl.Name = "thursdayBuyPricesControl";
+            this.thursdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
+            this.thursdayBuyPricesControl.TabIndex = 5;
+            // 
+            // wednesdayBuyPricesControl
+            // 
+            this.wednesdayBuyPricesControl.Location = new System.Drawing.Point(12, 206);
+            this.wednesdayBuyPricesControl.Name = "wednesdayBuyPricesControl";
+            this.wednesdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
+            this.wednesdayBuyPricesControl.TabIndex = 4;
+            // 
+            // tuesdayBuyPricesControl
+            // 
+            this.tuesdayBuyPricesControl.Location = new System.Drawing.Point(12, 121);
+            this.tuesdayBuyPricesControl.Name = "tuesdayBuyPricesControl";
+            this.tuesdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
+            this.tuesdayBuyPricesControl.TabIndex = 3;
+            // 
+            // mondayBuyPricesControl
+            // 
+            this.mondayBuyPricesControl.Location = new System.Drawing.Point(12, 36);
+            this.mondayBuyPricesControl.Name = "mondayBuyPricesControl";
+            this.mondayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
+            this.mondayBuyPricesControl.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -105,7 +111,9 @@
             this.Controls.Add(this.mondayBuyPricesControl);
             this.Controls.Add(this.sellPriceTextBox);
             this.Controls.Add(this.sellPriceLabel);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACNH Turnips Fortuneteller";
             this.ResumeLayout(false);
             this.PerformLayout();

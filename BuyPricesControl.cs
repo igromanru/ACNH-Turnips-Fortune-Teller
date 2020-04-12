@@ -4,9 +4,14 @@ namespace ACNH_Turnips_Fortuneteller
 {
     public partial class BuyPricesControl : UserControl
     {
-        public BuyPricesControl(string title)
+        public BuyPricesControl()
         {
-            InitializeComponent(title);
+            InitializeComponent();
+        }
+
+        public void SetTitle(string title)
+        {
+            buyPricesGroupBox.Text = title + buyPricesGroupBox.Text;
         }
     }
 }

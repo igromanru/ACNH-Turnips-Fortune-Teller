@@ -7,6 +7,12 @@ namespace ACNH_Turnips_Fortuneteller
         public MainForm()
         {
             InitializeComponent();
+            mondayBuyPricesControl.SetTitle("Monday");
+            tuesdayBuyPricesControl.SetTitle("Tuesday");
+            wednesdayBuyPricesControl.SetTitle("Wednesday");
+            thursdayBuyPricesControl.SetTitle("Thursday");
+            fridayBuyPricesControl.SetTitle("Friday");
+            saturdayBuyPricesControl.SetTitle("Saturday");
         }
     }
 }

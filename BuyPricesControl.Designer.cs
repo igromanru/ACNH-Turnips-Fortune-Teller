@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent(string title)
+        private void InitializeComponent()
         {
             this.buyPricesGroupBox = new System.Windows.Forms.GroupBox();
             this.eveningBuyPriceTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.buyPricesGroupBox.Size = new System.Drawing.Size(130, 73);
             this.buyPricesGroupBox.TabIndex = 3;
             this.buyPricesGroupBox.TabStop = false;
-            this.buyPricesGroupBox.Text = $"{title} buy prices";
+            this.buyPricesGroupBox.Text = " buy prices";
             // 
             // eveningBuyPriceTextBox
             // 
