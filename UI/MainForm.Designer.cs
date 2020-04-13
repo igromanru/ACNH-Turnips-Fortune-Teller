@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sellPriceLabel = new System.Windows.Forms.Label();
             this.sellPriceTextBox = new System.Windows.Forms.TextBox();
+            this.openSaveButton = new System.Windows.Forms.Button();
+            this.stalkMarketChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.saturdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
             this.fridayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
             this.thursdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
             this.wednesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
             this.tuesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
             this.mondayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
-            this.openSaveButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).BeginInit();
             this.SuspendLayout();
             // 
             // sellPriceLabel
@@ -57,6 +62,42 @@
             this.sellPriceTextBox.ReadOnly = true;
             this.sellPriceTextBox.Size = new System.Drawing.Size(55, 20);
             this.sellPriceTextBox.TabIndex = 1;
+            // 
+            // openSaveButton
+            // 
+            this.openSaveButton.Location = new System.Drawing.Point(223, 8);
+            this.openSaveButton.Name = "openSaveButton";
+            this.openSaveButton.Size = new System.Drawing.Size(138, 23);
+            this.openSaveButton.TabIndex = 8;
+            this.openSaveButton.Text = "Open save game...";
+            this.openSaveButton.UseVisualStyleBackColor = true;
+            this.openSaveButton.Click += new System.EventHandler(this.openSaveButton_Click);
+            // 
+            // stalkMarketChart
+            // 
+            this.stalkMarketChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.Name = "stalkMarketChartArea";
+            this.stalkMarketChart.ChartAreas.Add(chartArea1);
+            this.stalkMarketChart.Location = new System.Drawing.Point(372, 6);
+            this.stalkMarketChart.Name = "stalkMarketChart";
+            series1.ChartArea = "stalkMarketChartArea";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
+            series1.Name = "stalkMarketSeries";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.stalkMarketChart.Series.Add(series1);
+            this.stalkMarketChart.Size = new System.Drawing.Size(523, 328);
+            this.stalkMarketChart.TabIndex = 9;
+            this.stalkMarketChart.Text = "Stalk Market";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            title1.Name = "stalkMarketTitle";
+            title1.Text = "Stalk Market";
+            this.stalkMarketChart.Titles.Add(title1);
             // 
             // saturdayBuyPricesControl
             // 
@@ -100,21 +141,12 @@
             this.mondayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
             this.mondayBuyPricesControl.TabIndex = 2;
             // 
-            // openSaveButton
-            // 
-            this.openSaveButton.Location = new System.Drawing.Point(223, 8);
-            this.openSaveButton.Name = "openSaveButton";
-            this.openSaveButton.Size = new System.Drawing.Size(138, 23);
-            this.openSaveButton.TabIndex = 8;
-            this.openSaveButton.Text = "Open save game...";
-            this.openSaveButton.UseVisualStyleBackColor = true;
-            this.openSaveButton.Click += new System.EventHandler(this.openSaveButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 301);
+            this.ClientSize = new System.Drawing.Size(898, 338);
+            this.Controls.Add(this.stalkMarketChart);
             this.Controls.Add(this.openSaveButton);
             this.Controls.Add(this.saturdayBuyPricesControl);
             this.Controls.Add(this.fridayBuyPricesControl);
@@ -129,6 +161,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACNH Turnips Fortune Teller";
+            ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +178,7 @@
         private BuyPricesControl fridayBuyPricesControl;
         private BuyPricesControl saturdayBuyPricesControl;
         private System.Windows.Forms.Button openSaveButton;
+        private System.Windows.Forms.DataVisualization.Charting.Chart stalkMarketChart;
     }
 }
 
