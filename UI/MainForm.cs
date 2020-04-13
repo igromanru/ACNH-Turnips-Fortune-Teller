@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Resources;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using ACNH_Turnips_Fortuneteller.Properties;
 using ACNH_Turnips_Fortuneteller.Services;
 using MyHorizons.Data.TownData;
@@ -46,6 +47,20 @@ namespace ACNH_Turnips_Fortuneteller.UI
                         thursdayBuyPricesControl.SetPrices(stalkMarketValue.Thursday.MorningPrice, stalkMarketValue.Thursday.EveningPrice);
                         fridayBuyPricesControl.SetPrices(stalkMarketValue.Friday.MorningPrice, stalkMarketValue.Friday.EveningPrice);
                         saturdayBuyPricesControl.SetPrices(stalkMarketValue.Saturday.MorningPrice, stalkMarketValue.Saturday.EveningPrice);
+
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.Clear();
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Monday", stalkMarketValue.Monday.MorningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Monday", stalkMarketValue.Monday.EveningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Tuesday", stalkMarketValue.Tuesday.MorningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Tuesday", stalkMarketValue.Tuesday.EveningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Wednesday", stalkMarketValue.Wednesday.MorningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Wednesday", stalkMarketValue.Wednesday.EveningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Thursday", stalkMarketValue.Thursday.MorningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Thursday", stalkMarketValue.Thursday.EveningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Friday", stalkMarketValue.Friday.MorningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Friday", stalkMarketValue.Friday.EveningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Saturday", stalkMarketValue.Saturday.MorningPrice);
+                        stalkMarketChart.Series["stalkMarketSeries"].Points.AddXY("Saturday", stalkMarketValue.Saturday.EveningPrice);
                     }
                     else
                     {
@@ -54,6 +69,5 @@ namespace ACNH_Turnips_Fortuneteller.UI
                 }
             }
         }
-
     }
 }
