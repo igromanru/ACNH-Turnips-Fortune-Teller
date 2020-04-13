@@ -69,6 +69,7 @@
             // 
             // sellPriceTextBox
             // 
+            this.sellPriceTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.sellPriceTextBox.Location = new System.Drawing.Point(106, 10);
             this.sellPriceTextBox.Name = "sellPriceTextBox";
             this.sellPriceTextBox.ReadOnly = true;
@@ -90,6 +91,8 @@
             this.stalkMarketChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.stalkMarketChart.BorderlineColor = System.Drawing.Color.Silver;
+            this.stalkMarketChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.AxisX.IsMarginVisible = false;
             chartArea1.AxisX.LineColor = System.Drawing.Color.Gray;
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
@@ -101,7 +104,7 @@
             chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea1.Name = "stalkMarketChartArea";
             this.stalkMarketChart.ChartAreas.Add(chartArea1);
-            this.stalkMarketChart.Location = new System.Drawing.Point(372, 6);
+            this.stalkMarketChart.Location = new System.Drawing.Point(368, 8);
             this.stalkMarketChart.Name = "stalkMarketChart";
             series1.BorderWidth = 2;
             series1.ChartArea = "stalkMarketChartArea";
@@ -127,7 +130,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
             this.stalkMarketChart.Series.Add(series1);
-            this.stalkMarketChart.Size = new System.Drawing.Size(529, 341);
+            this.stalkMarketChart.Size = new System.Drawing.Size(528, 336);
             this.stalkMarketChart.TabIndex = 9;
             this.stalkMarketChart.Text = "Stalk Market";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -181,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(904, 351);
             this.Controls.Add(this.stalkMarketChart);
             this.Controls.Add(this.openSaveButton);

@@ -38,6 +38,7 @@
             // 
             // buyPricesGroupBox
             // 
+            this.buyPricesGroupBox.BackColor = System.Drawing.SystemColors.Window;
             this.buyPricesGroupBox.Controls.Add(this.eveningBuyPriceTextBox);
             this.buyPricesGroupBox.Controls.Add(this.eveningLabel);
             this.buyPricesGroupBox.Controls.Add(this.morningBuyPriceTextBox);
@@ -51,6 +52,7 @@
             // 
             // eveningBuyPriceTextBox
             // 
+            this.eveningBuyPriceTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.eveningBuyPriceTextBox.Location = new System.Drawing.Point(57, 43);
             this.eveningBuyPriceTextBox.Name = "eveningBuyPriceTextBox";
             this.eveningBuyPriceTextBox.ReadOnly = true;
@@ -69,6 +71,7 @@
             // 
             // morningBuyPriceTextBox
             // 
+            this.morningBuyPriceTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.morningBuyPriceTextBox.Location = new System.Drawing.Point(57, 17);
             this.morningBuyPriceTextBox.Name = "morningBuyPriceTextBox";
             this.morningBuyPriceTextBox.ReadOnly = true;
