@@ -61,6 +61,15 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save File|main.dat;mainHeader.dat.
+        /// </summary>
+        internal static string acnh_save_file_filter {
+            get {
+                return ResourceManager.GetString("acnh_save_file_filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turnips Fortuneteller.
         /// </summary>
         internal static string application_name {

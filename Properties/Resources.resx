@@ -127,4 +127,7 @@
   <data name="couldnt_parse_the_save_file" xml:space="preserve">
     <value>Couldn't parse the save file</value>
   </data>
+  <data name="acnh_save_file_filter" xml:space="preserve">
+    <value>Save File|main.dat;mainHeader.dat</value>
+  </data>
 </root>
