@@ -7,7 +7,7 @@ This tool was made for legit players who don't want to use cheats or save editor
 2. Press the `Open save game...` button and select/open the `main.dat` or `mainHeader.dat` from your save backup. Both files should be in the same location.
 3. Done. 
 
-![Preview](https://i.imgur.com/jAjPmk9.png)
+![Preview](https://i.imgur.com/IR5HChc.png)
 
 ### Requirements
 For Windows: [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)  
