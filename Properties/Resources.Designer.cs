@@ -88,12 +88,75 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Friday.
+        /// </summary>
+        internal static string friday {
+            get {
+                return ResourceManager.GetString("friday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monday.
+        /// </summary>
+        internal static string monday {
+            get {
+                return ResourceManager.GetString("monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saturday.
+        /// </summary>
+        internal static string saturday {
+            get {
+                return ResourceManager.GetString("saturday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunday.
+        /// </summary>
+        internal static string sunday {
+            get {
+                return ResourceManager.GetString("sunday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thursday.
+        /// </summary>
+        internal static string thursday {
+            get {
+                return ResourceManager.GetString("thursday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tuesday.
+        /// </summary>
+        internal static string tuesday {
+            get {
+                return ResourceManager.GetString("tuesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon turnip {
             get {
                 object obj = ResourceManager.GetObject("turnip", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wednesday.
+        /// </summary>
+        internal static string wednesday {
+            get {
+                return ResourceManager.GetString("wednesday", resourceCulture);
             }
         }
     }
