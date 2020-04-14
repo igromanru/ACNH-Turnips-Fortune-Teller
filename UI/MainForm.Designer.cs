@@ -43,25 +43,25 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 68D);
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 64D);
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sellPriceLabel = new System.Windows.Forms.Label();
             this.sellPriceTextBox = new System.Windows.Forms.TextBox();
             this.openSaveButton = new System.Windows.Forms.Button();
             this.stalkMarketChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.saturdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
-            this.fridayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
-            this.thursdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
-            this.wednesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
-            this.tuesdayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
-            this.mondayBuyPricesControl = new ACNH_Turnips_Fortuneteller.UI.BuyPricesControl();
+            this.stalkMarketDataGridView = new System.Windows.Forms.DataGridView();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DayTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stalkMarketDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // sellPriceLabel
             // 
             this.sellPriceLabel.AutoSize = true;
             this.sellPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellPriceLabel.Location = new System.Drawing.Point(13, 13);
+            this.sellPriceLabel.Location = new System.Drawing.Point(3, 41);
             this.sellPriceLabel.Name = "sellPriceLabel";
             this.sellPriceLabel.Size = new System.Drawing.Size(87, 13);
             this.sellPriceLabel.TabIndex = 0;
@@ -70,20 +70,22 @@
             // sellPriceTextBox
             // 
             this.sellPriceTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.sellPriceTextBox.Location = new System.Drawing.Point(106, 10);
+            this.sellPriceTextBox.Location = new System.Drawing.Point(96, 38);
             this.sellPriceTextBox.Name = "sellPriceTextBox";
             this.sellPriceTextBox.ReadOnly = true;
-            this.sellPriceTextBox.Size = new System.Drawing.Size(55, 20);
+            this.sellPriceTextBox.Size = new System.Drawing.Size(60, 20);
             this.sellPriceTextBox.TabIndex = 1;
+            this.sellPriceTextBox.Click += new System.EventHandler(this.sellPriceTextBox_Click);
             // 
             // openSaveButton
             // 
-            this.openSaveButton.Location = new System.Drawing.Point(223, 8);
+            this.openSaveButton.BackColor = System.Drawing.SystemColors.Window;
+            this.openSaveButton.Location = new System.Drawing.Point(6, 6);
             this.openSaveButton.Name = "openSaveButton";
-            this.openSaveButton.Size = new System.Drawing.Size(138, 23);
+            this.openSaveButton.Size = new System.Drawing.Size(150, 23);
             this.openSaveButton.TabIndex = 8;
             this.openSaveButton.Text = "Open save game...";
-            this.openSaveButton.UseVisualStyleBackColor = true;
+            this.openSaveButton.UseVisualStyleBackColor = false;
             this.openSaveButton.Click += new System.EventHandler(this.openSaveButton_Click);
             // 
             // stalkMarketChart
@@ -104,7 +106,7 @@
             chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea1.Name = "stalkMarketChartArea";
             this.stalkMarketChart.ChartAreas.Add(chartArea1);
-            this.stalkMarketChart.Location = new System.Drawing.Point(368, 8);
+            this.stalkMarketChart.Location = new System.Drawing.Point(162, 6);
             this.stalkMarketChart.Name = "stalkMarketChart";
             series1.BorderWidth = 2;
             series1.ChartArea = "stalkMarketChartArea";
@@ -130,7 +132,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
             this.stalkMarketChart.Series.Add(series1);
-            this.stalkMarketChart.Size = new System.Drawing.Size(528, 336);
+            this.stalkMarketChart.Size = new System.Drawing.Size(550, 352);
             this.stalkMarketChart.TabIndex = 9;
             this.stalkMarketChart.Text = "Stalk Market";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -138,70 +140,88 @@
             title1.Text = "Stalk Market";
             this.stalkMarketChart.Titles.Add(title1);
             // 
-            // saturdayBuyPricesControl
+            // stalkMarketDataGridView
             // 
-            this.saturdayBuyPricesControl.Location = new System.Drawing.Point(223, 206);
-            this.saturdayBuyPricesControl.Name = "saturdayBuyPricesControl";
-            this.saturdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.saturdayBuyPricesControl.TabIndex = 7;
+            this.stalkMarketDataGridView.AllowUserToAddRows = false;
+            this.stalkMarketDataGridView.AllowUserToDeleteRows = false;
+            this.stalkMarketDataGridView.AllowUserToResizeColumns = false;
+            this.stalkMarketDataGridView.AllowUserToResizeRows = false;
+            this.stalkMarketDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.stalkMarketDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.stalkMarketDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.stalkMarketDataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.stalkMarketDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.stalkMarketDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnName,
+            this.PriceColumn,
+            this.DayTimeColumn});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stalkMarketDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.stalkMarketDataGridView.GridColor = System.Drawing.SystemColors.Window;
+            this.stalkMarketDataGridView.Location = new System.Drawing.Point(6, 65);
+            this.stalkMarketDataGridView.MultiSelect = false;
+            this.stalkMarketDataGridView.Name = "stalkMarketDataGridView";
+            this.stalkMarketDataGridView.ReadOnly = true;
+            this.stalkMarketDataGridView.RowHeadersVisible = false;
+            this.stalkMarketDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.stalkMarketDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.stalkMarketDataGridView.Size = new System.Drawing.Size(150, 293);
+            this.stalkMarketDataGridView.TabIndex = 10;
+            this.stalkMarketDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stalkMarketDataGridView_CellContentClick);
             // 
-            // fridayBuyPricesControl
+            // ColumnName
             // 
-            this.fridayBuyPricesControl.Location = new System.Drawing.Point(223, 121);
-            this.fridayBuyPricesControl.Name = "fridayBuyPricesControl";
-            this.fridayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.fridayBuyPricesControl.TabIndex = 6;
+            this.ColumnName.FillWeight = 60F;
+            this.ColumnName.HeaderText = "Day";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnName.Width = 60;
             // 
-            // thursdayBuyPricesControl
+            // PriceColumn
             // 
-            this.thursdayBuyPricesControl.Location = new System.Drawing.Point(223, 36);
-            this.thursdayBuyPricesControl.Name = "thursdayBuyPricesControl";
-            this.thursdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.thursdayBuyPricesControl.TabIndex = 5;
+            this.PriceColumn.FillWeight = 45F;
+            this.PriceColumn.HeaderText = "Prices";
+            this.PriceColumn.Name = "PriceColumn";
+            this.PriceColumn.ReadOnly = true;
+            this.PriceColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PriceColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PriceColumn.Width = 45;
             // 
-            // wednesdayBuyPricesControl
+            // DayTimeColumn
             // 
-            this.wednesdayBuyPricesControl.Location = new System.Drawing.Point(12, 206);
-            this.wednesdayBuyPricesControl.Name = "wednesdayBuyPricesControl";
-            this.wednesdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.wednesdayBuyPricesControl.TabIndex = 4;
-            // 
-            // tuesdayBuyPricesControl
-            // 
-            this.tuesdayBuyPricesControl.Location = new System.Drawing.Point(12, 121);
-            this.tuesdayBuyPricesControl.Name = "tuesdayBuyPricesControl";
-            this.tuesdayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.tuesdayBuyPricesControl.TabIndex = 3;
-            // 
-            // mondayBuyPricesControl
-            // 
-            this.mondayBuyPricesControl.Location = new System.Drawing.Point(12, 36);
-            this.mondayBuyPricesControl.Name = "mondayBuyPricesControl";
-            this.mondayBuyPricesControl.Size = new System.Drawing.Size(138, 79);
-            this.mondayBuyPricesControl.TabIndex = 2;
+            this.DayTimeColumn.FillWeight = 40F;
+            this.DayTimeColumn.HeaderText = "Time";
+            this.DayTimeColumn.Name = "DayTimeColumn";
+            this.DayTimeColumn.ReadOnly = true;
+            this.DayTimeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DayTimeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DayTimeColumn.Width = 40;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(904, 351);
+            this.ClientSize = new System.Drawing.Size(716, 363);
+            this.Controls.Add(this.stalkMarketDataGridView);
             this.Controls.Add(this.stalkMarketChart);
             this.Controls.Add(this.openSaveButton);
-            this.Controls.Add(this.saturdayBuyPricesControl);
-            this.Controls.Add(this.fridayBuyPricesControl);
-            this.Controls.Add(this.thursdayBuyPricesControl);
-            this.Controls.Add(this.wednesdayBuyPricesControl);
-            this.Controls.Add(this.tuesdayBuyPricesControl);
-            this.Controls.Add(this.mondayBuyPricesControl);
             this.Controls.Add(this.sellPriceTextBox);
             this.Controls.Add(this.sellPriceLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(920, 390);
             this.Name = "MainForm";
             this.Text = "ACNH Turnips Fortune Teller";
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stalkMarketDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,14 +231,12 @@
 
         private System.Windows.Forms.Label sellPriceLabel;
         private System.Windows.Forms.TextBox sellPriceTextBox;
-        private BuyPricesControl mondayBuyPricesControl;
-        private BuyPricesControl tuesdayBuyPricesControl;
-        private BuyPricesControl wednesdayBuyPricesControl;
-        private BuyPricesControl thursdayBuyPricesControl;
-        private BuyPricesControl fridayBuyPricesControl;
-        private BuyPricesControl saturdayBuyPricesControl;
         private System.Windows.Forms.Button openSaveButton;
         private System.Windows.Forms.DataVisualization.Charting.Chart stalkMarketChart;
+        private System.Windows.Forms.DataGridView stalkMarketDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DayTimeColumn;
     }
 }
 

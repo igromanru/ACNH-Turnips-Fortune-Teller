@@ -7,7 +7,13 @@ This tool was made for legit players who don't want to use cheats or save editor
 2. Press the `Open save game...` button and select/open the `main.dat` or `mainHeader.dat` from your save backup. Both files should be in the same location.
 3. Done. 
 
-![Preview](https://i.imgur.com/IR5HChc.png)
+![Preview](https://i.imgur.com/ECxgUTT.png)
+
+
+### How to copy values
+Just left click into the field that you want to copy to your clipboard, then you can use ctrl+v to paste somewhere else.
+
+![copy click](https://i.imgur.com/zU1k87Q.gif)
 
 ### Requirements
 For Windows: [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)  
@@ -15,5 +21,4 @@ For Unix /MacOS: [latest Mono](https://www.mono-project.com/download/stable/)
 
 
 ### Credits
-
 [MyHorizons](https://github.com/Cuyler36/MyHorizons) by [Cuyler36](https://github.com/Cuyler36/): I'm using his save parser  
