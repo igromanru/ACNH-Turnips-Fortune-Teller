@@ -17,7 +17,7 @@ Just left click into the field that you want to copy to your clipboard, then you
 
 ### Requirements
 For Windows: [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)  
-For Unix /MacOS: [latest Mono](https://www.mono-project.com/download/stable/) 
+For Unix / MacOS: [latest Mono](https://www.mono-project.com/download/stable/) 
 
 
 ### Credits
