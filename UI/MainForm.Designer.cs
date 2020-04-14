@@ -188,7 +188,7 @@
             // PriceColumn
             // 
             this.PriceColumn.FillWeight = 45F;
-            this.PriceColumn.HeaderText = "Prices";
+            this.PriceColumn.HeaderText = "Price";
             this.PriceColumn.Name = "PriceColumn";
             this.PriceColumn.ReadOnly = true;
             this.PriceColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
