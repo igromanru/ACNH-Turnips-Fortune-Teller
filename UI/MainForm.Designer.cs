@@ -217,7 +217,6 @@
             this.Controls.Add(this.sellPriceTextBox);
             this.Controls.Add(this.sellPriceLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(732, 402);
             this.Name = "MainForm";
             this.Text = "ACNH Turnips Fortune Teller";
