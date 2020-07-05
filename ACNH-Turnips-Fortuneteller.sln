@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACNH-Turnips-Fortuneteller", "ACNH-Turnips-Fortuneteller.csproj", "{AF58AFF0-AD0D-46BB-8477-44F992372133}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHorizons", "MyHorizons\MyHorizons\MyHorizons.csproj", "{2BA58A1F-BA21-4968-9989-A9F61278B461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHSE.Core", "NHSE\NHSE.Core\NHSE.Core.csproj", "{9BF635FB-8B2F-46BE-8463-961A37632AA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{AF58AFF0-AD0D-46BB-8477-44F992372133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF58AFF0-AD0D-46BB-8477-44F992372133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF58AFF0-AD0D-46BB-8477-44F992372133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BA58A1F-BA21-4968-9989-A9F61278B461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BA58A1F-BA21-4968-9989-A9F61278B461}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BA58A1F-BA21-4968-9989-A9F61278B461}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BA58A1F-BA21-4968-9989-A9F61278B461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF635FB-8B2F-46BE-8463-961A37632AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF635FB-8B2F-46BE-8463-961A37632AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF635FB-8B2F-46BE-8463-961A37632AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF635FB-8B2F-46BE-8463-961A37632AA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

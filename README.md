@@ -24,4 +24,4 @@ For Windows: [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-f
 For Unix / MacOS: [latest Mono](https://www.mono-project.com/download/stable/) 
 
 ### Credits
-[MyHorizons](https://github.com/Cuyler36/MyHorizons) by [Cuyler36](https://github.com/Cuyler36/): I'm using his save parser  
+[NHSE](https://github.com/kwsch/NHSE) by [Kurt](https://github.com/kwsch): I'm using NHSE's save parser  

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ACNH_Turnips_Fortuneteller.Properties;
 using ACNH_Turnips_Fortuneteller.Services;
-using MyHorizons.Data.TownData;
+using NHSE.Core;
 
 namespace ACNH_Turnips_Fortuneteller.UI
 {
@@ -34,10 +34,10 @@ namespace ACNH_Turnips_Fortuneteller.UI
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName), out StalkMarket? stalkMarket) && stalkMarket != null)
+                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName), out TurnipStonk turnipStonk) && turnipStonk != null)
                     {
-                        SetPrices(stalkMarket.Value);
-                        SetChartData(stalkMarket.Value);
+                        SetPrices(turnipStonk);
+                        SetChartData(turnipStonk);
                     }
                     else
                     {
@@ -47,16 +47,16 @@ namespace ACNH_Turnips_Fortuneteller.UI
             }
         }
 
-        private void SetPrices(StalkMarket stalkMarket)
+        private void SetPrices(TurnipStonk turnipStonk)
         {
-            sellPriceTextBox.Text = stalkMarket.BuyPrice.ToString();
+            sellPriceTextBox.Text = turnipStonk.BuyPrice.ToString();
             stalkMarketDataGridView.Rows.Clear();
-            AddDayPrice(Resources.monday, stalkMarket.Monday.MorningPrice, stalkMarket.Monday.EveningPrice);
-            AddDayPrice(Resources.tuesday, stalkMarket.Tuesday.MorningPrice, stalkMarket.Tuesday.EveningPrice);
-            AddDayPrice(Resources.wednesday, stalkMarket.Wednesday.MorningPrice, stalkMarket.Wednesday.EveningPrice);
-            AddDayPrice(Resources.thursday, stalkMarket.Thursday.MorningPrice, stalkMarket.Thursday.EveningPrice);
-            AddDayPrice(Resources.friday, stalkMarket.Friday.MorningPrice, stalkMarket.Friday.EveningPrice);
-            AddDayPrice(Resources.saturday, stalkMarket.Saturday.MorningPrice, stalkMarket.Saturday.EveningPrice);
+            AddDayPrice(Resources.monday, turnipStonk.SellMondayAM, turnipStonk.SellMondayPM);
+            AddDayPrice(Resources.tuesday, turnipStonk.SellTuesdayAM, turnipStonk.SellTuesdayPM);
+            AddDayPrice(Resources.wednesday, turnipStonk.SellWednesdayAM, turnipStonk.SellWednesdayPM);
+            AddDayPrice(Resources.thursday, turnipStonk.SellThursdayAM, turnipStonk.SellThursdayPM);
+            AddDayPrice(Resources.friday, turnipStonk.SellFridayAM, turnipStonk.SellFridayPM);
+            AddDayPrice(Resources.saturday, turnipStonk.SellSaturdayAM, turnipStonk.SellSaturdayPM);
 
 
         }
@@ -67,21 +67,21 @@ namespace ACNH_Turnips_Fortuneteller.UI
             stalkMarketDataGridView.Rows.Add("", eveningPrice, "p.m");
         }
 
-        private void SetChartData(StalkMarket stalkMarket)
+        private void SetChartData(TurnipStonk stalkMarket)
         {
             StalkMarketSeries.Points.Clear();
-            AddXYToChart(Resources.monday, stalkMarket.Monday.MorningPrice);
-            AddXYToChart(Resources.monday, stalkMarket.Monday.EveningPrice);
-            AddXYToChart(Resources.tuesday, stalkMarket.Tuesday.MorningPrice);
-            AddXYToChart(Resources.tuesday, stalkMarket.Tuesday.EveningPrice);
-            AddXYToChart(Resources.wednesday, stalkMarket.Wednesday.MorningPrice);
-            AddXYToChart(Resources.wednesday, stalkMarket.Wednesday.EveningPrice);
-            AddXYToChart(Resources.thursday, stalkMarket.Thursday.MorningPrice);
-            AddXYToChart(Resources.thursday, stalkMarket.Thursday.EveningPrice);
-            AddXYToChart(Resources.friday, stalkMarket.Friday.MorningPrice);
-            AddXYToChart(Resources.friday, stalkMarket.Friday.EveningPrice);
-            AddXYToChart(Resources.saturday, stalkMarket.Saturday.MorningPrice);
-            AddXYToChart(Resources.saturday, stalkMarket.Saturday.EveningPrice);
+            AddXYToChart(Resources.monday, stalkMarket.SellMondayAM);
+            AddXYToChart(Resources.monday, stalkMarket.SellMondayPM);
+            AddXYToChart(Resources.tuesday, stalkMarket.SellTuesdayAM);
+            AddXYToChart(Resources.tuesday, stalkMarket.SellTuesdayPM);
+            AddXYToChart(Resources.wednesday, stalkMarket.SellWednesdayAM);
+            AddXYToChart(Resources.wednesday, stalkMarket.SellWednesdayPM);
+            AddXYToChart(Resources.thursday, stalkMarket.SellThursdayAM);
+            AddXYToChart(Resources.thursday, stalkMarket.SellThursdayPM);
+            AddXYToChart(Resources.friday, stalkMarket.SellFridayAM);
+            AddXYToChart(Resources.friday, stalkMarket.SellFridayPM);
+            AddXYToChart(Resources.saturday, stalkMarket.SellSaturdayAM);
+            AddXYToChart(Resources.saturday, stalkMarket.SellSaturdayPM);
         }
 
         private void AddXYToChart(string xValue, uint yValue)

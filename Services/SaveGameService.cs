@@ -1,8 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using MyHorizons.Data.Save;
-using MyHorizons.Data.TownData;
+using NHSE.Core;
 using NLog;
 
 namespace ACNH_Turnips_Fortuneteller.Services
@@ -14,9 +13,9 @@ namespace ACNH_Turnips_Fortuneteller.Services
         private const string MainDat = "main.dat";
         private const string MainHeaderDat = "mainHeader.dat";
 
-        public bool OpenSaveFromFolder(string saveDirectory, out StalkMarket? stalkMarket)
+        public bool OpenSaveFromFolder(string saveDirectory, out TurnipStonk turnipStonk)
         {
-            stalkMarket = null;
+            turnipStonk = null;
             var result = false;
             var mainDatPath = Path.Combine(saveDirectory, MainDat);
             var mainHeaderDatPath = Path.Combine(saveDirectory, MainHeaderDat);
@@ -32,9 +31,16 @@ namespace ACNH_Turnips_Fortuneteller.Services
             {
                 try
                 {
-                    var mainSaveFile = new MainSaveFile(mainHeaderDatPath, mainDatPath);
-                    result = mainSaveFile.Loaded && mainSaveFile.Town != null;
-                    stalkMarket = mainSaveFile.Town?.StalkMarket;
+                    var mainSaveFile = new HorizonSave(saveDirectory);
+                    if(mainSaveFile.ValidateSizes())
+                    {
+                        result = true;
+                        turnipStonk = mainSaveFile.Main.Turnips;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Save file sizes appear to be incorrect.", "Version doesn't match", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception e)
                 {
