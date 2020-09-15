@@ -53,15 +53,20 @@
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.turnipsTabPage = new System.Windows.Forms.TabPage();
+            this.visitorsTabPage = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketDataGridView)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.turnipsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // sellPriceLabel
             // 
             this.sellPriceLabel.AutoSize = true;
             this.sellPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellPriceLabel.Location = new System.Drawing.Point(3, 41);
+            this.sellPriceLabel.Location = new System.Drawing.Point(3, 9);
             this.sellPriceLabel.Name = "sellPriceLabel";
             this.sellPriceLabel.Size = new System.Drawing.Size(87, 13);
             this.sellPriceLabel.TabIndex = 0;
@@ -70,7 +75,7 @@
             // sellPriceTextBox
             // 
             this.sellPriceTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.sellPriceTextBox.Location = new System.Drawing.Point(96, 38);
+            this.sellPriceTextBox.Location = new System.Drawing.Point(93, 6);
             this.sellPriceTextBox.Name = "sellPriceTextBox";
             this.sellPriceTextBox.ReadOnly = true;
             this.sellPriceTextBox.Size = new System.Drawing.Size(60, 20);
@@ -79,10 +84,12 @@
             // 
             // openSaveButton
             // 
+            this.openSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.openSaveButton.BackColor = System.Drawing.SystemColors.Window;
             this.openSaveButton.Location = new System.Drawing.Point(6, 6);
             this.openSaveButton.Name = "openSaveButton";
-            this.openSaveButton.Size = new System.Drawing.Size(150, 23);
+            this.openSaveButton.Size = new System.Drawing.Size(718, 23);
             this.openSaveButton.TabIndex = 8;
             this.openSaveButton.Text = "Open save game...";
             this.openSaveButton.UseVisualStyleBackColor = false;
@@ -90,9 +97,6 @@
             // 
             // stalkMarketChart
             // 
-            this.stalkMarketChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.stalkMarketChart.BorderlineColor = System.Drawing.Color.Silver;
             this.stalkMarketChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.AxisX.IsMarginVisible = false;
@@ -106,7 +110,7 @@
             chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea1.Name = "stalkMarketChartArea";
             this.stalkMarketChart.ChartAreas.Add(chartArea1);
-            this.stalkMarketChart.Location = new System.Drawing.Point(162, 6);
+            this.stalkMarketChart.Location = new System.Drawing.Point(159, 6);
             this.stalkMarketChart.Name = "stalkMarketChart";
             series1.BorderWidth = 2;
             series1.ChartArea = "stalkMarketChartArea";
@@ -164,14 +168,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.stalkMarketDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.stalkMarketDataGridView.GridColor = System.Drawing.SystemColors.Window;
-            this.stalkMarketDataGridView.Location = new System.Drawing.Point(6, 65);
+            this.stalkMarketDataGridView.Location = new System.Drawing.Point(3, 32);
             this.stalkMarketDataGridView.MultiSelect = false;
             this.stalkMarketDataGridView.Name = "stalkMarketDataGridView";
             this.stalkMarketDataGridView.ReadOnly = true;
             this.stalkMarketDataGridView.RowHeadersVisible = false;
             this.stalkMarketDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.stalkMarketDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.stalkMarketDataGridView.Size = new System.Drawing.Size(150, 293);
+            this.stalkMarketDataGridView.Size = new System.Drawing.Size(150, 326);
             this.stalkMarketDataGridView.TabIndex = 10;
             this.stalkMarketDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stalkMarketDataGridView_CellContentClick);
             // 
@@ -205,25 +209,64 @@
             this.DayTimeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.DayTimeColumn.Width = 40;
             // 
+            // tabControl
+            // 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl.Controls.Add(this.turnipsTabPage);
+            this.tabControl.Controls.Add(this.visitorsTabPage);
+            this.tabControl.Location = new System.Drawing.Point(6, 35);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(722, 389);
+            this.tabControl.TabIndex = 11;
+            // 
+            // turnipsTabPage
+            // 
+            this.turnipsTabPage.Controls.Add(this.stalkMarketChart);
+            this.turnipsTabPage.Controls.Add(this.stalkMarketDataGridView);
+            this.turnipsTabPage.Controls.Add(this.sellPriceLabel);
+            this.turnipsTabPage.Controls.Add(this.sellPriceTextBox);
+            this.turnipsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.turnipsTabPage.Name = "turnipsTabPage";
+            this.turnipsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.turnipsTabPage.Size = new System.Drawing.Size(714, 363);
+            this.turnipsTabPage.TabIndex = 0;
+            this.turnipsTabPage.Text = "Turnips";
+            this.turnipsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // visitorsTabPage
+            // 
+            this.visitorsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.visitorsTabPage.Name = "visitorsTabPage";
+            this.visitorsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.visitorsTabPage.Size = new System.Drawing.Size(714, 363);
+            this.visitorsTabPage.TabIndex = 1;
+            this.visitorsTabPage.Text = "Visitors";
+            this.visitorsTabPage.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(716, 363);
-            this.Controls.Add(this.stalkMarketDataGridView);
-            this.Controls.Add(this.stalkMarketChart);
+            this.ClientSize = new System.Drawing.Size(732, 427);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.openSaveButton);
-            this.Controls.Add(this.sellPriceTextBox);
-            this.Controls.Add(this.sellPriceLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(732, 402);
             this.Name = "MainForm";
             this.Text = "ACNH Turnips Fortune Teller";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketDataGridView)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.turnipsTabPage.ResumeLayout(false);
+            this.turnipsTabPage.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -237,6 +280,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTimeColumn;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage turnipsTabPage;
+        private System.Windows.Forms.TabPage visitorsTabPage;
     }
 }
 

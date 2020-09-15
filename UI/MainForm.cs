@@ -31,18 +31,11 @@ namespace ACNH_Turnips_Fortuneteller.UI
             {
                 openFileDialog.Filter = Resources.acnh_save_file_filter;
                 openFileDialog.RestoreDirectory = true;
+                openFileDialog.Multiselect = false;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(openFileDialog.FileName), out TurnipStonk turnipStonk) && turnipStonk != null)
-                    {
-                        SetPrices(turnipStonk);
-                        SetChartData(turnipStonk);
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.couldnt_parse_the_save_file, Resources.application_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    OpenSaveFile(openFileDialog.FileName);
                 }
             }
         }
@@ -123,6 +116,39 @@ namespace ACNH_Turnips_Fortuneteller.UI
             if (!string.IsNullOrEmpty(textBox.Text))
             {
                 Clipboard.SetText(textBox.Text);
+            }
+        }
+
+        private void MainForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void MainForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length > 0)
+                {
+                    OpenSaveFile(files[0]);
+                }
+            }
+        }
+
+        private void OpenSaveFile(string filePath)
+        {
+            if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(filePath), out TurnipStonk turnipStonk) && turnipStonk != null)
+            {
+                SetPrices(turnipStonk);
+                SetChartData(turnipStonk);
+            }
+            else
+            {
+                MessageBox.Show(Resources.couldnt_parse_the_save_file, Resources.application_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
