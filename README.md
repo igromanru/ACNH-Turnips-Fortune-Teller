@@ -11,8 +11,8 @@ https://discord.io/stalk-market-gurus
 2. Press the `Open save game...` button and select/open the `main.dat` or `mainHeader.dat` from your save backup. Both files should be in the same location.
 3. Done. 
 
-![Preview](https://i.imgur.com/ECxgUTT.png)
-
+![Preview](https://i.imgur.com/vVV5Iiq.png)
+![Preview2](https://i.imgur.com/AsoNbO7.png)
 
 ### How to copy values
 Just left click into the field that you want to copy to your clipboard, then you can use ctrl+v to paste somewhere else.
