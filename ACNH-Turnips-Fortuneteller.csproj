@@ -151,5 +151,41 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Celeste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gullivarrr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gulliver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kicks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saharah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wisp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

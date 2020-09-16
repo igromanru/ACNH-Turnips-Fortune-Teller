@@ -57,18 +57,22 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.turnipsTabPage = new System.Windows.Forms.TabPage();
             this.visitorsTabPage = new System.Windows.Forms.TabPage();
+            this.primaryVisitorPicture = new System.Windows.Forms.PictureBox();
             this.visitorsDataGridView = new System.Windows.Forms.DataGridView();
             this.visitDayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.primaryVisitorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secondaryVisitorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveTimeLabel = new System.Windows.Forms.Label();
             this.saveTimeValueLabel = new System.Windows.Forms.Label();
+            this.secodanryVisitorPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketDataGridView)).BeginInit();
             this.tabControl.SuspendLayout();
             this.turnipsTabPage.SuspendLayout();
             this.visitorsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryVisitorPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitorsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secodanryVisitorPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // sellPriceLabel
@@ -250,6 +254,8 @@
             // 
             // visitorsTabPage
             // 
+            this.visitorsTabPage.Controls.Add(this.secodanryVisitorPicture);
+            this.visitorsTabPage.Controls.Add(this.primaryVisitorPicture);
             this.visitorsTabPage.Controls.Add(this.visitorsDataGridView);
             this.visitorsTabPage.Location = new System.Drawing.Point(4, 22);
             this.visitorsTabPage.Name = "visitorsTabPage";
@@ -258,6 +264,15 @@
             this.visitorsTabPage.TabIndex = 1;
             this.visitorsTabPage.Text = "Visitors";
             this.visitorsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // primaryVisitorPicture
+            // 
+            this.primaryVisitorPicture.Location = new System.Drawing.Point(252, 3);
+            this.primaryVisitorPicture.Name = "primaryVisitorPicture";
+            this.primaryVisitorPicture.Size = new System.Drawing.Size(220, 286);
+            this.primaryVisitorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.primaryVisitorPicture.TabIndex = 12;
+            this.primaryVisitorPicture.TabStop = false;
             // 
             // visitorsDataGridView
             // 
@@ -291,6 +306,7 @@
             this.visitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.visitorsDataGridView.Size = new System.Drawing.Size(246, 286);
             this.visitorsDataGridView.TabIndex = 11;
+            this.visitorsDataGridView.SelectionChanged += new System.EventHandler(this.visitorsDataGridView_SelectionChanged);
             // 
             // visitDayColumn
             // 
@@ -338,6 +354,15 @@
             this.saveTimeValueLabel.Size = new System.Drawing.Size(0, 13);
             this.saveTimeValueLabel.TabIndex = 13;
             // 
+            // secodanryVisitorPicture
+            // 
+            this.secodanryVisitorPicture.Location = new System.Drawing.Point(488, 3);
+            this.secodanryVisitorPicture.Name = "secodanryVisitorPicture";
+            this.secodanryVisitorPicture.Size = new System.Drawing.Size(220, 286);
+            this.secodanryVisitorPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.secodanryVisitorPicture.TabIndex = 13;
+            this.secodanryVisitorPicture.TabStop = false;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -361,7 +386,9 @@
             this.turnipsTabPage.ResumeLayout(false);
             this.turnipsTabPage.PerformLayout();
             this.visitorsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.primaryVisitorPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitorsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secodanryVisitorPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,6 +413,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn visitDayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn primaryVisitorColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn secondaryVisitorColumn;
+        private System.Windows.Forms.PictureBox primaryVisitorPicture;
+        private System.Windows.Forms.PictureBox secodanryVisitorPicture;
     }
 }
 

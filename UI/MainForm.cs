@@ -180,5 +180,28 @@ namespace ACNH_Turnips_Fortuneteller.UI
             }
             visitorsDataGridView.Refresh();
         }
+
+        private void visitorsDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            var dataGridView = (DataGridView) sender;
+            var primaryVisitor = (string)dataGridView.CurrentRow.Cells[1].Value;
+            var secondaryVisitor = (string)dataGridView.CurrentRow.Cells[2].Value;
+            SetVisitorPicture(primaryVisitorPicture, primaryVisitor);
+            SetVisitorPicture(secodanryVisitorPicture, secondaryVisitor);
+        }
+
+        private void SetVisitorPicture(PictureBox pictureBox, string visitorName)
+        {
+            if (!string.IsNullOrEmpty(visitorName) && visitorName != VisitorNPC.None.ToString())
+            {
+                pictureBox.Image = (Image)Resources.ResourceManager.GetObject($"{visitorName}_Image");
+            }
+            else
+            {
+                pictureBox.Image = null;
+            }
+
+            pictureBox.Refresh();
+        }
     }
 }

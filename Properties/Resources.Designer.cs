@@ -88,11 +88,41 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Celeste_Image {
+            get {
+                object obj = ResourceManager.GetObject("Celeste_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CJ_Image {
+            get {
+                object obj = ResourceManager.GetObject("CJ_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Couldn&apos;t parse the save file.
         /// </summary>
         internal static string couldnt_parse_the_save_file {
             get {
                 return ResourceManager.GetString("couldnt_parse_the_save_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flick_Image {
+            get {
+                object obj = ResourceManager.GetObject("Flick_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -106,11 +136,91 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gullivarrr_Image {
+            get {
+                object obj = ResourceManager.GetObject("Gullivarrr_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gulliver_Image {
+            get {
+                object obj = ResourceManager.GetObject("Gulliver_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kicks_Image {
+            get {
+                object obj = ResourceManager.GetObject("Kicks_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Label_Image {
+            get {
+                object obj = ResourceManager.GetObject("Label_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leif_Image {
+            get {
+                object obj = ResourceManager.GetObject("Leif_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mabel_Image {
+            get {
+                object obj = ResourceManager.GetObject("Mabel_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monday.
         /// </summary>
         internal static string monday {
             get {
                 return ResourceManager.GetString("monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Redd_Image {
+            get {
+                object obj = ResourceManager.GetObject("Redd_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Saharah_Image {
+            get {
+                object obj = ResourceManager.GetObject("Saharah_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -175,6 +285,16 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         internal static string wisp {
             get {
                 return ResourceManager.GetString("wisp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wisp_Image {
+            get {
+                object obj = ResourceManager.GetObject("Wisp_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

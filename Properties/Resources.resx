@@ -157,4 +157,40 @@
   <data name="wisp" xml:space="preserve">
     <value>Wisp</value>
   </data>
+  <data name="Celeste_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Celeste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CJ_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CJ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flick_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gullivarrr_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gullivarrr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gulliver_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gulliver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kicks_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kicks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Label_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Leif_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Leif.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mabel_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Redd_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Redd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Saharah_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Saharah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wisp_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wisp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
