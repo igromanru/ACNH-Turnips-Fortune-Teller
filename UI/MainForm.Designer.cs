@@ -58,11 +58,11 @@
             this.turnipsTabPage = new System.Windows.Forms.TabPage();
             this.visitorsTabPage = new System.Windows.Forms.TabPage();
             this.visitorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.saveTimeLabel = new System.Windows.Forms.Label();
-            this.saveTimeValueLabel = new System.Windows.Forms.Label();
             this.visitDayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.primaryVisitorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secondaryVisitorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveTimeLabel = new System.Windows.Forms.Label();
+            this.saveTimeValueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stalkMarketDataGridView)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -292,24 +292,6 @@
             this.visitorsDataGridView.Size = new System.Drawing.Size(246, 286);
             this.visitorsDataGridView.TabIndex = 11;
             // 
-            // saveTimeLabel
-            // 
-            this.saveTimeLabel.AutoSize = true;
-            this.saveTimeLabel.Location = new System.Drawing.Point(3, 11);
-            this.saveTimeLabel.Name = "saveTimeLabel";
-            this.saveTimeLabel.Size = new System.Drawing.Size(57, 13);
-            this.saveTimeLabel.TabIndex = 12;
-            this.saveTimeLabel.Text = "Save time:";
-            // 
-            // saveTimeValueLabel
-            // 
-            this.saveTimeValueLabel.AutoSize = true;
-            this.saveTimeValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveTimeValueLabel.Location = new System.Drawing.Point(57, 12);
-            this.saveTimeValueLabel.Name = "saveTimeValueLabel";
-            this.saveTimeValueLabel.Size = new System.Drawing.Size(0, 13);
-            this.saveTimeValueLabel.TabIndex = 13;
-            // 
             // visitDayColumn
             // 
             this.visitDayColumn.FillWeight = 70F;
@@ -338,6 +320,24 @@
             this.secondaryVisitorColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.secondaryVisitorColumn.Width = 95;
             // 
+            // saveTimeLabel
+            // 
+            this.saveTimeLabel.AutoSize = true;
+            this.saveTimeLabel.Location = new System.Drawing.Point(3, 11);
+            this.saveTimeLabel.Name = "saveTimeLabel";
+            this.saveTimeLabel.Size = new System.Drawing.Size(57, 13);
+            this.saveTimeLabel.TabIndex = 12;
+            this.saveTimeLabel.Text = "Save time:";
+            // 
+            // saveTimeValueLabel
+            // 
+            this.saveTimeValueLabel.AutoSize = true;
+            this.saveTimeValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveTimeValueLabel.Location = new System.Drawing.Point(57, 12);
+            this.saveTimeValueLabel.Name = "saveTimeValueLabel";
+            this.saveTimeValueLabel.Size = new System.Drawing.Size(0, 13);
+            this.saveTimeValueLabel.TabIndex = 13;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -350,7 +350,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.openSaveButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(732, 402);
+            this.MinimumSize = new System.Drawing.Size(748, 466);
             this.Name = "MainForm";
             this.Text = "ACNH Turnips Fortune Teller";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
