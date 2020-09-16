@@ -151,4 +151,10 @@
   <data name="wednesday" xml:space="preserve">
     <value>Wednesday</value>
   </data>
+  <data name="celeste" xml:space="preserve">
+    <value>Celeste</value>
+  </data>
+  <data name="wisp" xml:space="preserve">
+    <value>Wisp</value>
+  </data>
 </root>

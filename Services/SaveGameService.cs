@@ -13,9 +13,9 @@ namespace ACNH_Turnips_Fortuneteller.Services
         private const string MainDat = "main.dat";
         private const string MainHeaderDat = "mainHeader.dat";
 
-        public bool OpenSaveFromFolder(string saveDirectory, out TurnipStonk turnipStonk)
+        public bool OpenSaveFromFolder(string saveDirectory, out MainSave mainSave)
         {
-            turnipStonk = null;
+            mainSave = null;
             var result = false;
             var mainDatPath = Path.Combine(saveDirectory, MainDat);
             var mainHeaderDatPath = Path.Combine(saveDirectory, MainHeaderDat);
@@ -35,7 +35,7 @@ namespace ACNH_Turnips_Fortuneteller.Services
                     if(mainSaveFile.ValidateSizes())
                     {
                         result = true;
-                        turnipStonk = mainSaveFile.Main.Turnips;
+                        mainSave = mainSaveFile.Main;
                     }
                     else
                     {

@@ -6,11 +6,14 @@ using System.Windows.Forms.DataVisualization.Charting;
 using ACNH_Turnips_Fortuneteller.Properties;
 using ACNH_Turnips_Fortuneteller.Services;
 using NHSE.Core;
+using NLog;
 
 namespace ACNH_Turnips_Fortuneteller.UI
 {
     public partial class MainForm : Form
     {
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         private SaveGameService SaveGameService { get; }
 
         private Series StalkMarketSeries;
@@ -50,8 +53,6 @@ namespace ACNH_Turnips_Fortuneteller.UI
             AddDayPrice(Resources.thursday, turnipStonk.SellThursdayAM, turnipStonk.SellThursdayPM);
             AddDayPrice(Resources.friday, turnipStonk.SellFridayAM, turnipStonk.SellFridayPM);
             AddDayPrice(Resources.saturday, turnipStonk.SellSaturdayAM, turnipStonk.SellSaturdayPM);
-
-
         }
 
         private void AddDayPrice(string day, uint morningPrice, uint eveningPrice)
@@ -141,15 +142,43 @@ namespace ACNH_Turnips_Fortuneteller.UI
 
         private void OpenSaveFile(string filePath)
         {
-            if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(filePath), out TurnipStonk turnipStonk) && turnipStonk != null)
+            if (SaveGameService.OpenSaveFromFolder(Path.GetDirectoryName(filePath), out MainSave mainSave) && mainSave != null)
             {
-                SetPrices(turnipStonk);
-                SetChartData(turnipStonk);
+                saveTimeValueLabel.Text = mainSave.LastSaved.TimeStamp;
+                SetPrices(mainSave.Turnips);
+                SetChartData(mainSave.Turnips);
+                SetVisitors(mainSave.Visitor);
             }
             else
             {
                 MessageBox.Show(Resources.couldnt_parse_the_save_file, Resources.application_name, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void SetVisitors(GSaveVisitorNpc gSaveVisitorNpc)
+        {
+            visitorsDataGridView.Rows.Clear();
+            visitorsDataGridView.Rows.Add(Resources.monday, gSaveVisitorNpc.VisitorNPC[1].ToString());
+            visitorsDataGridView.Rows.Add(Resources.tuesday, gSaveVisitorNpc.VisitorNPC[2].ToString());
+            visitorsDataGridView.Rows.Add(Resources.wednesday, gSaveVisitorNpc.VisitorNPC[3].ToString());
+            visitorsDataGridView.Rows.Add(Resources.thursday, gSaveVisitorNpc.VisitorNPC[4].ToString());
+            visitorsDataGridView.Rows.Add(Resources.friday, gSaveVisitorNpc.VisitorNPC[5].ToString());
+            visitorsDataGridView.Rows.Add(Resources.saturday, gSaveVisitorNpc.VisitorNPC[6].ToString());
+            visitorsDataGridView.Rows.Add(Resources.sunday, gSaveVisitorNpc.VisitorNPC[0].ToString());
+            if (gSaveVisitorNpc.DayCeleste >= 0 && gSaveVisitorNpc.DayCeleste < 7)
+            {
+                visitorsDataGridView.Rows[gSaveVisitorNpc.DayCeleste].Cells[2].Value = Resources.celeste;
+            }
+            if (gSaveVisitorNpc.DayWisp >= 0 && gSaveVisitorNpc.DayWisp < 7)
+            {
+                visitorsDataGridView.Rows[gSaveVisitorNpc.DayWisp].Cells[2].Value = Resources.wisp;
+            }
+
+            for (var i = 0; i < visitorsDataGridView.Rows.Count; i++)
+            {
+                visitorsDataGridView.Rows[i].Cells[1].Value = ((string)visitorsDataGridView.Rows[i].Cells[1].Value).Replace(VisitorNPC.None.ToString(), "");
+            }
+            visitorsDataGridView.Refresh();
         }
     }
 }

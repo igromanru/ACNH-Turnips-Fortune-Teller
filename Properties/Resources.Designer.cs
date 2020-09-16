@@ -79,6 +79,15 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Celeste.
+        /// </summary>
+        internal static string celeste {
+            get {
+                return ResourceManager.GetString("celeste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Couldn&apos;t parse the save file.
         /// </summary>
         internal static string couldnt_parse_the_save_file {
@@ -157,6 +166,15 @@ namespace ACNH_Turnips_Fortuneteller.Properties {
         internal static string wednesday {
             get {
                 return ResourceManager.GetString("wednesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wisp.
+        /// </summary>
+        internal static string wisp {
+            get {
+                return ResourceManager.GetString("wisp", resourceCulture);
             }
         }
     }
