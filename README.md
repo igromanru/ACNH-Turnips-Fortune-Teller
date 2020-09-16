@@ -19,6 +19,13 @@ Just left click into the field that you want to copy to your clipboard, then you
 
 ![copy click](https://i.imgur.com/zU1k87Q.gif)
 
+### When do the Turnips prices change?
+The game generates new Turnips prices on Sunday for the next week.
+It means that you have to create a new save file each week, if you want to know latest prices.
+
+### When do the Visitors rotation change?
+New visitor rotation begins at Monday, so if you want to know which visitor will come the recent week, you have to create a new save game on Monday or later.
+
 ### Requirements
 For Windows: [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)  
 For Unix / MacOS: [latest Mono](https://www.mono-project.com/download/stable/) 
