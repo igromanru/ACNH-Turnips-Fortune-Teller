@@ -21,6 +21,7 @@ namespace ACNH_Turnips_Fortuneteller.UI
         public MainForm()
         {
             InitializeComponent();
+            Text += $" v{Application.ProductVersion}";
 
             StalkMarketSeries = stalkMarketChart.Series["stalkMarketSeries"];
             StalkMarketSeries.Points.Clear(); // cleaning test data
