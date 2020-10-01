@@ -188,4 +188,10 @@
     <None Include="Resources\Wisp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $(TargetDir)
+rmdir /s /q Resources
+del /s /q *.pdb
+del /s /q NLog.xml</PostBuildEvent>
+  </PropertyGroup>
 </Project>

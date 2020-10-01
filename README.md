@@ -12,7 +12,7 @@ https://discord.io/stalk-market-gurus
 3. Done. 
 
 ![Preview](https://i.imgur.com/vVV5Iiq.png)
-![Preview2](https://i.imgur.com/AsoNbO7.png)
+![Preview2](https://i.imgur.com/P2oGOmA.png)
 
 ### How to copy values
 Just left click into the field that you want to copy to your clipboard, then you can use ctrl+v to paste somewhere else.
