@@ -166,13 +166,19 @@ namespace ACNH_Turnips_Fortuneteller.UI
             visitorsDataGridView.Rows.Add(Resources.friday, gSaveVisitorNpc.VisitorNPC[5].ToString());
             visitorsDataGridView.Rows.Add(Resources.saturday, gSaveVisitorNpc.VisitorNPC[6].ToString());
             visitorsDataGridView.Rows.Add(Resources.sunday, gSaveVisitorNpc.VisitorNPC[0].ToString());
-            if (gSaveVisitorNpc.DayCeleste >= 0 && gSaveVisitorNpc.DayCeleste < 7)
+
+            if (gSaveVisitorNpc.DayCeleste > 0 && gSaveVisitorNpc.DayCeleste <= 7)
             {
-                visitorsDataGridView.Rows[gSaveVisitorNpc.DayCeleste].Cells[2].Value = Resources.celeste;
+                visitorsDataGridView.Rows[gSaveVisitorNpc.DayCeleste - 1].Cells[2].Value = Resources.celeste;
             }
-            if (gSaveVisitorNpc.DayWisp >= 0 && gSaveVisitorNpc.DayWisp < 7)
+            if (gSaveVisitorNpc.DayWisp > 0 && gSaveVisitorNpc.DayWisp <= 7)
             {
-                visitorsDataGridView.Rows[gSaveVisitorNpc.DayWisp].Cells[2].Value = Resources.wisp;
+                var cellIndex = 2;
+                if (!string.IsNullOrEmpty((string)visitorsDataGridView.Rows[gSaveVisitorNpc.DayWisp - 1].Cells[cellIndex].Value))
+                {
+                    cellIndex = 3;
+                }
+                visitorsDataGridView.Rows[gSaveVisitorNpc.DayWisp - 1].Cells[cellIndex].Value = Resources.wisp;
             }
 
             for (var i = 0; i < visitorsDataGridView.Rows.Count; i++)
@@ -187,8 +193,10 @@ namespace ACNH_Turnips_Fortuneteller.UI
             var dataGridView = (DataGridView) sender;
             var primaryVisitor = (string)dataGridView.CurrentRow.Cells[1].Value;
             var secondaryVisitor = (string)dataGridView.CurrentRow.Cells[2].Value;
+            var tertiaryVisitor = (string)dataGridView.CurrentRow.Cells[3].Value;
             SetVisitorPicture(primaryVisitorPicture, primaryVisitor);
             SetVisitorPicture(secodanryVisitorPicture, secondaryVisitor);
+            SetVisitorPicture(tertiaryVisitorPicture, tertiaryVisitor);
         }
 
         private void SetVisitorPicture(PictureBox pictureBox, string visitorName)
