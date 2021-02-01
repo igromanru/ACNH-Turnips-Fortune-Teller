@@ -167,18 +167,20 @@ namespace ACNH_Turnips_Fortuneteller.UI
             visitorsDataGridView.Rows.Add(Resources.saturday, gSaveVisitorNpc.VisitorNPC[6].ToString());
             visitorsDataGridView.Rows.Add(Resources.sunday, gSaveVisitorNpc.VisitorNPC[0].ToString());
 
-            if (gSaveVisitorNpc.DayCeleste > 0 && gSaveVisitorNpc.DayCeleste <= 7)
+            if (gSaveVisitorNpc.DayCeleste >= 0 && gSaveVisitorNpc.DayCeleste < 7)
             {
-                visitorsDataGridView.Rows[gSaveVisitorNpc.DayCeleste - 1].Cells[2].Value = Resources.celeste;
+                var celesteDay = gSaveVisitorNpc.DayCeleste == 0 ? 6 : gSaveVisitorNpc.DayCeleste - 1;
+                visitorsDataGridView.Rows[celesteDay].Cells[2].Value = Resources.celeste;
             }
-            if (gSaveVisitorNpc.DayWisp > 0 && gSaveVisitorNpc.DayWisp <= 7)
+            if (gSaveVisitorNpc.DayWisp >= 0 && gSaveVisitorNpc.DayWisp < 7)
             {
+                var wispDay = gSaveVisitorNpc.DayWisp == 0 ? 6 : gSaveVisitorNpc.DayWisp - 1;
                 var cellIndex = 2;
-                if (!string.IsNullOrEmpty((string)visitorsDataGridView.Rows[gSaveVisitorNpc.DayWisp - 1].Cells[cellIndex].Value))
+                if (!string.IsNullOrEmpty((string)visitorsDataGridView.Rows[wispDay].Cells[cellIndex].Value))
                 {
                     cellIndex = 3;
                 }
-                visitorsDataGridView.Rows[gSaveVisitorNpc.DayWisp - 1].Cells[cellIndex].Value = Resources.wisp;
+                visitorsDataGridView.Rows[wispDay].Cells[cellIndex].Value = Resources.wisp;
             }
 
             for (var i = 0; i < visitorsDataGridView.Rows.Count; i++)
